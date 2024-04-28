@@ -5,8 +5,43 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1713800831909,
-      "tag": "0000_next_mercury",
+      "when": 1714234847438,
+      "tag": "0000_optimal_thena",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714312977773,
+      "tag": "0001_curious_toxin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714317055426,
+      "tag": "0002_dashing_devos",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1714317561094,
+      "tag": "0003_public_oracle",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1714317921194,
+      "tag": "0004_fresh_toad",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1714324608508,
+      "tag": "0005_slow_hemingway",
       "breakpoints": true
     }
   ]

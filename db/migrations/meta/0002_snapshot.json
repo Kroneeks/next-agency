@@ -1,6 +1,6 @@
 {
-  "id": "c406a12b-8dc4-4b5e-9c01-297f0a81696b",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "299ba6bb-5a4a-4ade-a976-7dcd61390be9",
+  "prevId": "468e4766-c6d9-4278-b7d3-d0d15594fb82",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -36,6 +36,12 @@
         },
         "serverId": {
           "name": "serverId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "memberId": {
+          "name": "memberId",
           "type": "uuid",
           "primaryKey": false,
           "notNull": false
@@ -106,6 +112,19 @@
           "tableTo": "server",
           "columnsFrom": [
             "serverId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "channel_memberId_member_id_fk": {
+          "name": "channel_memberId_member_id_fk",
+          "tableFrom": "channel",
+          "tableTo": "member",
+          "columnsFrom": [
+            "memberId"
           ],
           "columnsTo": [
             "id"

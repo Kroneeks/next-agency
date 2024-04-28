@@ -1,6 +1,6 @@
 {
-  "id": "c406a12b-8dc4-4b5e-9c01-297f0a81696b",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "8c1abc93-7ca4-4fdf-bc21-cf064ba5ff66",
+  "prevId": "da9e10be-a9f3-4c02-9598-e5de3190f5f1",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -34,8 +34,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "serverId": {
-          "name": "serverId",
+        "memberId": {
+          "name": "memberId",
           "type": "uuid",
           "primaryKey": false,
           "notNull": false
@@ -60,13 +60,6 @@
           "name": "profileId",
           "columns": [
             "profileId"
-          ],
-          "isUnique": false
-        },
-        "serverId": {
-          "name": "serverId",
-          "columns": [
-            "serverId"
           ],
           "isUnique": false
         },
@@ -100,12 +93,12 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "channel_serverId_server_id_fk": {
-          "name": "channel_serverId_server_id_fk",
+        "channel_memberId_member_id_fk": {
+          "name": "channel_memberId_member_id_fk",
           "tableFrom": "channel",
-          "tableTo": "server",
+          "tableTo": "member",
           "columnsFrom": [
-            "serverId"
+            "memberId"
           ],
           "columnsTo": [
             "id"
@@ -141,12 +134,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "serverId": {
-          "name": "serverId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": false
-        },
         "createdAt": {
           "name": "createdAt",
           "type": "timestamp",
@@ -170,19 +157,6 @@
           "tableTo": "profile",
           "columnsFrom": [
             "profileId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        },
-        "member_serverId_server_id_fk": {
-          "name": "member_serverId_server_id_fk",
-          "tableFrom": "member",
-          "tableTo": "server",
-          "columnsFrom": [
-            "serverId"
           ],
           "columnsTo": [
             "id"
@@ -292,6 +266,18 @@
           "primaryKey": false,
           "notNull": false
         },
+        "channelId": {
+          "name": "channelId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "memberId": {
+          "name": "memberId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
         "createdAt": {
           "name": "createdAt",
           "type": "timestamp",
@@ -315,6 +301,32 @@
           "tableTo": "profile",
           "columnsFrom": [
             "profileId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "server_channelId_channel_id_fk": {
+          "name": "server_channelId_channel_id_fk",
+          "tableFrom": "server",
+          "tableTo": "channel",
+          "columnsFrom": [
+            "channelId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "server_memberId_member_id_fk": {
+          "name": "server_memberId_member_id_fk",
+          "tableFrom": "server",
+          "tableTo": "member",
+          "columnsFrom": [
+            "memberId"
           ],
           "columnsTo": [
             "id"

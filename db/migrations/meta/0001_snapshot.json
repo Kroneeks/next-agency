@@ -1,6 +1,6 @@
 {
-  "id": "c406a12b-8dc4-4b5e-9c01-297f0a81696b",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "468e4766-c6d9-4278-b7d3-d0d15594fb82",
+  "prevId": "c406a12b-8dc4-4b5e-9c01-297f0a81696b",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -292,6 +292,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "channelId": {
+          "name": "channelId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
         "createdAt": {
           "name": "createdAt",
           "type": "timestamp",
@@ -315,6 +321,19 @@
           "tableTo": "profile",
           "columnsFrom": [
             "profileId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "server_channelId_profile_id_fk": {
+          "name": "server_channelId_profile_id_fk",
+          "tableFrom": "server",
+          "tableTo": "profile",
+          "columnsFrom": [
+            "channelId"
           ],
           "columnsTo": [
             "id"

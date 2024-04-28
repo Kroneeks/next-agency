@@ -1,6 +1,6 @@
 {
-  "id": "c406a12b-8dc4-4b5e-9c01-297f0a81696b",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "da9e10be-a9f3-4c02-9598-e5de3190f5f1",
+  "prevId": "299ba6bb-5a4a-4ade-a976-7dcd61390be9",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -36,6 +36,12 @@
         },
         "serverId": {
           "name": "serverId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "memberId": {
+          "name": "memberId",
           "type": "uuid",
           "primaryKey": false,
           "notNull": false
@@ -112,6 +118,19 @@
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
+        },
+        "channel_memberId_member_id_fk": {
+          "name": "channel_memberId_member_id_fk",
+          "tableFrom": "channel",
+          "tableTo": "member",
+          "columnsFrom": [
+            "memberId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -141,12 +160,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "serverId": {
-          "name": "serverId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": false
-        },
         "createdAt": {
           "name": "createdAt",
           "type": "timestamp",
@@ -170,19 +183,6 @@
           "tableTo": "profile",
           "columnsFrom": [
             "profileId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        },
-        "member_serverId_server_id_fk": {
-          "name": "member_serverId_server_id_fk",
-          "tableFrom": "member",
-          "tableTo": "server",
-          "columnsFrom": [
-            "serverId"
           ],
           "columnsTo": [
             "id"
@@ -292,6 +292,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "memberId": {
+          "name": "memberId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
         "createdAt": {
           "name": "createdAt",
           "type": "timestamp",
@@ -315,6 +321,19 @@
           "tableTo": "profile",
           "columnsFrom": [
             "profileId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "server_memberId_member_id_fk": {
+          "name": "server_memberId_member_id_fk",
+          "tableFrom": "server",
+          "tableTo": "member",
+          "columnsFrom": [
+            "memberId"
           ],
           "columnsTo": [
             "id"
